@@ -1,0 +1,84 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<Paging.Models.客戶>
+
+@{
+    ViewBag.Title = "客戶資料";
+}
+
+<h2>客戶資料</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().公司名稱)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().連絡人)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().連絡人職稱)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().地址)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().城市)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().行政區)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().郵遞區號)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().國家地區)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().電話)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().傳真電話)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.公司名稱)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.連絡人)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.連絡人職稱)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.地址)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.城市)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.行政區)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.郵遞區號)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.國家地區)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.電話)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.傳真電話)
+        </td>
+        <td>
+        </td>
+    </tr>
+}
+</table>
+
+@Html.PagedListPager(Model,page=>Url.Action("Index",new { page }))
