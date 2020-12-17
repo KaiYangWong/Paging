@@ -47,7 +47,7 @@ Index.cshtml
 * 最上方要記得加入引用，跟在Controller一樣
 * 使用@Html.PagedListPager()顯示分頁工具列
 
-
+![image](https://user-images.githubusercontent.com/30917086/102493907-d5c6e100-40ae-11eb-94d1-46818f466d45.png)
 
 
 
