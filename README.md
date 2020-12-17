@@ -34,3 +34,21 @@ public class HomeController : Controller
 * 在Controller中要記得加入引用
 * 指定預設分頁是在第一頁
 
+Index.cshtml
+```
+@using PagedList
+@using PagedList.Mvc
+@model IPagedList<Paging.Models.客戶>
+```
+```
+@Html.PagedListPager(Model,page=>Url.Action("Index",new { page }))
+```
+
+* 最上方要記得加入引用，跟在Controller一樣
+* 使用@Html.PagedListPager()顯示分頁工具列
+
+
+
+
+
+
